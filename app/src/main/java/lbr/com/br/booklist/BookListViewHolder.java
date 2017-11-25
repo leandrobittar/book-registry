@@ -27,6 +27,8 @@ public class BookListViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
         ButterKnife.bind(this,itemView);
     }
-    //  @BindView(R.id)
+
+
+
 
 }

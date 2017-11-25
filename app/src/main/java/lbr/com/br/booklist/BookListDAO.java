@@ -11,6 +11,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BookListDAO extends SQLiteOpenHelper {
 
+    public static String[] title = new String[]{
+            "Cronicas de hoje",
+            "Biografia de alguém",
+            "Piada nacional"
+
+    };
+    public static int[] pages = new int[]{
+            10,
+            200,
+            10000
+    };
+
+    public static int[] image = new int[]{
+            R.drawable.ic_book,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_foreground
+    };
+
     private  static final  String TABELA = "Books";
     private  static final int VERSAO = 1;
 
