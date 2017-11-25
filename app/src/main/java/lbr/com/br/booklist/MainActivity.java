@@ -20,6 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        BookListAdapter bookListAdapter = new BookListAdapter(this);
+        mRecyclerView.setAdapter(bookListAdapter);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
+
 
     }
 }
