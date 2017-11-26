@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BookList</string>
+    <string name="book_name">Nome do livro</string>
+    <string name="number_page">Numero de páginas</string>
 </resources>

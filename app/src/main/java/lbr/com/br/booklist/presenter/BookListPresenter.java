@@ -1,12 +1,14 @@
-package lbr.com.br.booklist;
+package lbr.com.br.booklist.presenter;
 
 import android.content.Context;
+
+import lbr.com.br.booklist.contract.BookListContract;
 
 /**
  * Created by Leandro on 24/11/2017.
  */
 
-public class BookListPresenter implements BookListContract.Presenter{
+public class BookListPresenter implements BookListContract.Presenter {
 
     private Context context;
 

@@ -1,9 +1,11 @@
-package lbr.com.br.booklist;
+package lbr.com.br.booklist.model;
 
 import android.content.Context;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import lbr.com.br.booklist.R;
 
 /**
  * Created by Leandro on 24/11/2017.

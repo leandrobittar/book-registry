@@ -1,4 +1,4 @@
-package lbr.com.br.booklist;
+package lbr.com.br.booklist.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import lbr.com.br.booklist.R;
 
 /**
  * Created by Leandro on 24/11/2017.
