@@ -1,6 +1,9 @@
 package lbr.com.br.booklist.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,7 +16,7 @@ import lbr.com.br.booklist.R;
  * Created by Leandro on 24/11/2017.
  */
 
-public class BookListViewHolder extends RecyclerView.ViewHolder{
+public class BookListViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
 
     @BindView(R.id.image_view_photo_id)
     public ImageView mImageView;
@@ -26,10 +29,17 @@ public class BookListViewHolder extends RecyclerView.ViewHolder{
 
     public BookListViewHolder(View itemView) {
         super(itemView);
-        ButterKnife.bind(this,itemView);
+        ButterKnife.bind(this, itemView);
     }
 
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
+       /* MenuItem Teste = menu.add("Edit");
+        MenuItem Teste1 = menu.add("Copy");
+        MenuItem Teste2 = menu.add("Delete");*/
+        menu.add(Menu.NONE, 1, Menu.NONE, "deletar");
+    }
 
 
 }

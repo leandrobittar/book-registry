@@ -16,7 +16,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:id="@+id/button_photo_id"
+                android:id="@+id/image_photo_form_id"
                 android:background="#02a9ec"
                 android:src="@drawable/ic_book"/>
 
