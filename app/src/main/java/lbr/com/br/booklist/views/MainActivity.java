@@ -6,9 +6,6 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.ContextMenu;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -16,15 +13,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.OnItemClick;
 import lbr.com.br.booklist.R;
 import lbr.com.br.booklist.adapter.BookListAdapter;
-import lbr.com.br.booklist.contract.BookListContract;
 import lbr.com.br.booklist.entity.Book;
 import lbr.com.br.booklist.model.BookListDAO;
-import lbr.com.br.booklist.presenter.BookListPresenter;
 
-public class MainActivity extends AppCompatActivity implements BookListContract.View {
+public class MainActivity extends AppCompatActivity  {
 
     @BindView(R.id.recycler_view_id)
     public RecyclerView mRecyclerView;
@@ -32,9 +26,7 @@ public class MainActivity extends AppCompatActivity implements BookListContract.
     @BindView(R.id.button_add_id)
     public FloatingActionButton mButton;
 
-    private BookListContract.View view;
 
-    private BookListContract.Presenter presenter;
 
     private List<Book> books;
 
@@ -45,17 +37,8 @@ public class MainActivity extends AppCompatActivity implements BookListContract.
 
         ButterKnife.bind(this);
 
-        this.presenter = new BookListPresenter(this, this);
-
         setRecyclerView();
 
-        /*
-        BookListDAO bookListDAO = new BookListDAO(this);
-        books = bookListDAO.getListValue();
-        bookListDAO.close();
-
-        ArrayAdapter<Book> adapter = new ArrayAdapter<Book>(this, android.R.layout.simple_list_item_1, books);
-*/
     }
 
     private void setRecyclerView() {

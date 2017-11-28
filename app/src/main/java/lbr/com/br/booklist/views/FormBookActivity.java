@@ -2,14 +2,13 @@ package lbr.com.br.booklist.views;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
@@ -18,20 +17,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import lbr.com.br.booklist.R;
-import lbr.com.br.booklist.contract.FormBookContract;
 import lbr.com.br.booklist.entity.Book;
 import lbr.com.br.booklist.helper.FormHelper;
 import lbr.com.br.booklist.model.BookListDAO;
-import lbr.com.br.booklist.presenter.FormBookPresenter;
 
-public class FormBookActivity extends AppCompatActivity implements FormBookContract.View {
+public class FormBookActivity extends AppCompatActivity  {
 
     @BindView(R.id.button_get_photo_id)
     public FloatingActionButton mButton;
-
-    private FormBookContract.View view;
-
-    private FormBookContract.Presenter presenter;
 
     private FormHelper helper;
 
@@ -42,8 +35,6 @@ public class FormBookActivity extends AppCompatActivity implements FormBookContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_book);
         ButterKnife.bind(this);
-
-        this.presenter = new FormBookPresenter(this, this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

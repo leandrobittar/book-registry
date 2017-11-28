@@ -5,9 +5,7 @@ import android.graphics.BitmapFactory;
 import android.support.design.widget.TextInputLayout;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import lbr.com.br.booklist.R;
 import lbr.com.br.booklist.entity.Book;
@@ -18,18 +16,6 @@ import lbr.com.br.booklist.views.FormBookActivity;
  */
 
 public class FormHelper {
-/*
-    @BindView(R.id.edit_text_name_id)
-    public EditText mNameText;
-
-    @BindView(R.id.label_form_name_id)
-    public TextInputLayout mNameLabel;
-
-    @BindView(R.id.edit_text_number_page_id)
-    public EditText mNumberPageText;
-
-    @BindView(R.id.image_photo_form_id)
-    public ImageView mPhotoFormImage;*/
 
     private EditText mNameText;
     private TextInputLayout mNameLabel;
@@ -45,13 +31,9 @@ public class FormHelper {
         ButterKnife.bind(activity);
 
         this.mNameText = (EditText) activity.findViewById(R.id.edit_text_name_id);
-        //mNameText;
         this.mNumberPageText = (EditText) activity.findViewById(R.id.edit_text_number_page_id);
-        //mNumberPageText;
         this.mNameLabel = (TextInputLayout) activity.findViewById(R.id.label_form_name_id);
-        // mNameLabel;
         this.mPhotoFormImage = (ImageView) activity.findViewById(R.id.image_photo_form_id);
-        // mPhotoFormImage;
 
     }
 
