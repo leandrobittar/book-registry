@@ -6,6 +6,10 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.ContextMenu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -25,8 +29,6 @@ public class MainActivity extends AppCompatActivity  {
 
     @BindView(R.id.button_add_id)
     public FloatingActionButton mButton;
-
-
 
     private List<Book> books;
 
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity  {
         this.loadList();
     }
 
+
     private void loadList() {
         BookListDAO bookListDAO = new BookListDAO(this);
         books = bookListDAO.getListValue();
@@ -69,6 +72,19 @@ public class MainActivity extends AppCompatActivity  {
         this.setRecyclerView();
 
         BookListAdapter bookListAdapter = new BookListAdapter(books, this);
+    }
+
+    public void deleteItemList(Book book) {
+        BookListDAO bookListDAO = new BookListDAO(this);
+        bookListDAO.deleteValue(book);
+        bookListDAO.close();
+
+        this.setRecyclerView();
+    }
+
+    public void alterItemList(Book book) {
+
+
     }
 
     @OnClick(R.id.button_add_id)

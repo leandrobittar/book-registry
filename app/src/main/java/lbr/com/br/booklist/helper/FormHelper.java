@@ -22,6 +22,7 @@ public class FormHelper {
     public EditText mNumberPageText;
     public ImageView mPhotoFormImage;
 
+    private FormHelper helper;
 
     private Book book;
 

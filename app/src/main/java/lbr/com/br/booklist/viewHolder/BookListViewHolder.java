@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import butterknife.BindView;
@@ -16,7 +17,9 @@ import lbr.com.br.booklist.R;
  * Created by Leandro on 24/11/2017.
  */
 
-public class BookListViewHolder extends RecyclerView.ViewHolder  {
+public class BookListViewHolder extends RecyclerView.ViewHolder {
+    @BindView(R.id.layout_item_list_id)
+    public LinearLayout mLayoutItemList;
 
     @BindView(R.id.image_view_photo_id)
     public ImageView mImageView;

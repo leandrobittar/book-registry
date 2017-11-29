@@ -50,7 +50,6 @@ public class FormBookActivity extends AppCompatActivity  {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_form_book, menu);
         return true;
@@ -59,9 +58,6 @@ public class FormBookActivity extends AppCompatActivity  {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
             case R.id.menu_btn_salvar:
                 if (helper.isValidName()) {
 
@@ -82,15 +78,16 @@ public class FormBookActivity extends AppCompatActivity  {
                 } else {
                     helper.showError();
                 }
-
-            default:
+                return false;
+            case android.R.id.home:
+                finish();
                 return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     @OnClick(R.id.button_get_photo_id)
     public void addPhoto() {
-
 
         photoPath = getExternalFilesDir(null) + "/" + System.currentTimeMillis() + ".jpg";
         File file = new File(photoPath);
@@ -106,9 +103,7 @@ public class FormBookActivity extends AppCompatActivity  {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 12){
             if (resultCode == RESULT_OK){
-
                 helper.loadImage(photoPath);
-                Toast.makeText(FormBookActivity.this, "Testando o retorno", Toast.LENGTH_LONG).show();
             }
         }
     }
